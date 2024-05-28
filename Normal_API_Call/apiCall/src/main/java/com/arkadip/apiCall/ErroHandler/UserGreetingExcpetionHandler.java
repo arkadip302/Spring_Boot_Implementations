@@ -10,7 +10,6 @@ public class UserGreetingExcpetionHandler {
 
     @ExceptionHandler(value = NullPointerException.class)
     public ResponseEntity<String> handleNullPoinerException(NullPointerException exception) {
-        System.err.println("Here");
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_ACCEPTABLE);
     }
 
