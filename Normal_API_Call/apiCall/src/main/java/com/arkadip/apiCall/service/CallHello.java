@@ -13,6 +13,8 @@ import com.arkadip.apiCall.DTO.UserDTO;
 import com.arkadip.apiCall.manager.UserGreetingsManager;
 import com.arkadip.apiCall.model.User;
 
+import jakarta.validation.Valid;
+
 @Service
 @RestController
 @RequestMapping("/demo")
@@ -27,7 +29,7 @@ public class CallHello {
     }
 
     @PostMapping("/isASeniorCitizen")
-    public User postMethodName(@RequestBody UserDTO dto) {
+    public User postMethodName(@Valid @RequestBody UserDTO dto) {
 
         return greetingsManager.isSeniorCitizen(dto);
     }
